@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "blender-batch-circle-fitter"
+version = "0.1.0"  # Initial Version - Bump with each release!
+authors = [
+  { name = "Your Name", email = "your.email@example.com" } # Your info
+]
+description = "A standalone Python tool for batch 2D circle fitting, assisting Blender users."
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "ezdxf>=0.18",
+    "hdbscan>=0.8.29",
+    "numpy>=1.22",
+    "pandera>=0.9.0",
+    "polars>=0.13.0",
+    "pydantic>=2.0",
+    "scikit-image>=0.19.0",
+    "joblib>=1.0.0",
+    "tqdm>=4.60.0",
+    "wxpython>=4.1.1",
+    "scikit-learn>=1.0.0"  # ADDED scikit-learn - ESSENTIAL!
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",  #  CHOOSE YOUR LICENSE
+    "Operating System :: OS Independent",
+	"Intended Audience :: End Users/Desktop",
+	"Topic :: Multimedia :: Graphics :: 3D Modeling",
+	"Topic :: Scientific/Engineering",
+]
+
+
+[project.scripts]
+batch-circle-fitter = "batch_circle_fitter:main"
+
+[tool.setuptools]
+py-modules = ["batch_circle_fitter"]
+
+[tool.setuptools.dynamic]
+readme = {file = ["README.md"]}
